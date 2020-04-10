@@ -17,12 +17,12 @@ using System.Windows.Shapes;
 
 namespace ODD_Project
 {
-    enum GameGenre
-    {
-        RPG = 0,
-        Shooter = 0,
-        Sport = 0
-    }
+    //enum GameGenre
+    //{
+    //    RPG = 0,
+    //    Shooter = 0,
+    //    Sport = 0
+    //}
     public partial class MainWindow : Window
     {
 

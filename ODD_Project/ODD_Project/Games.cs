@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -16,12 +17,15 @@ namespace ODD_Project
         //Properties
         [Key]
         public int GameID { get; set; }
-        public int GenreID { get; set; }
+
+
+        public int GenID { get; set; }
         public string Name { get; set; }
         public decimal Cost { get; set; }
 
         public DateTime ReleaseDate { get; set; }
         public string Review { get; set; }
+        [ForeignKey("GenID")]
         public virtual Genre Genre { get; set; }
         public override string ToString()
         {
@@ -52,7 +56,9 @@ namespace ODD_Project
 
         public class Genre
         {
-            public int GenreID { get; set; }
+
+        [Key]
+            public int GenID { get; set; }
             public string Name { get; set; }
 
         public virtual List<Games> games { get; set; }
