@@ -14,7 +14,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace ODD_Project
 {
     //enum GameGenre
@@ -25,6 +24,8 @@ namespace ODD_Project
     //}
     public partial class MainWindow : Window
     {
+
+        GenreData db = new GenreData();
 
         //Creating lists
         List<Games> games = new List<Games>();
@@ -112,12 +113,64 @@ namespace ODD_Project
             //games.Add(G13);
             //games.Add(G14);
 
+            //var query = from g in db.Games
+            //            group g by g.Genre into g
+            //            orderby g.Count() descending
+            //            select new
+            //            {
+            //                Game = g.Key,
+            //                Count = g.Count()
+            //            };
+
+
+            ////shows all shooter games with their name and reivew
+            //var query = from g in db.Games
+            //            where g.GenID == 4
+            //            orderby g.Name
+            //            //select c;
+
+            //            select new
+            //            {
+            //                g.Name,
+            //                g.Review
+            //            };
+
+
+            //shows all games that cost 30 or under
+            //var query = from g in db.Games
+            //            orderby g.Cost
+            //            where g.Cost <= 30
+            //            select new
+            //            {
+            //                GameName = g.Name,
+            //                Cost = g.Cost,
+
+            //            };
+
+            var query = from g in db.Games
+                        orderby g.Cost descending
+                        select new
+                        {
+                 
+                            g.Name,
+                            g.Cost
+                        };
+
+            //var results = query.ToList();
+
+            //Ex6DgDisplay.ItemsSource = results;
+
+            datagames.ItemsSource = query.ToList().Distinct();
+
+            //datagames.ItemsSource = query.ToList();
+
             ////display in listbox
-            //lbxGames.ItemsSource = games; //tell listbox that the source of items is the list activitie
+            //lbxGames.ItemsSource = db.Games;//tell listbox that the source of items is the list activitie
+            //datagames.ItemsSource = db.Games.
 
             //combo box
-            ComboBoxGenres.ItemsSource = new string[] { "RPG", "Shooter", "Sport" };
-            ComboBoxGenres.SelectedIndex = 0;
+            //ComboBoxGenres.ItemsSource = new string[] { "RPG", "Shooter", "Sport" };
+            //ComboBoxGenres.SelectedIndex = 0;
 
       
         }
