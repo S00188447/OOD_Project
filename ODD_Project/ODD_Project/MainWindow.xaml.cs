@@ -147,20 +147,30 @@ namespace ODD_Project
 
             //            };
 
-            var query = from g in db.Games
-                        orderby g.Cost descending
-                        select new
-                        {
-                 
-                            g.Name,
-                            g.Cost
-                        };
+            ////Sorting by cost high to low
+            //var query = from g in db.Games
+            //            orderby g.Cost descending
+            //            select new
+            //            {
+
+            //                g.Name,
+            //                g.Cost
+            //            };
+
+            ////returns the games with the gen id of 6
+            //var query = (from detail in db.Games
+            //              where detail.GenID == 6
+            //              select detail);
+
+
 
             //var results = query.ToList();
 
-            //Ex6DgDisplay.ItemsSource = results;
+            //Ex1DgDisplay.ItemsSource = results;
 
-            datagames.ItemsSource = query.ToList().Distinct();
+
+
+            //datagames.ItemsSource = query.ToList().Distinct();
 
             //datagames.ItemsSource = query.ToList();
 
@@ -172,7 +182,7 @@ namespace ODD_Project
             //ComboBoxGenres.ItemsSource = new string[] { "RPG", "Shooter", "Sport" };
             //ComboBoxGenres.SelectedIndex = 0;
 
-      
+
         }
 
         private void BtnViewReview_Click(object sender, RoutedEventArgs e)

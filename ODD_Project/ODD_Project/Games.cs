@@ -64,11 +64,59 @@ namespace ODD_Project
         public virtual List<Games> games { get; set; }
         }
 
+    public class Sales
+    {
+
+        [Key]
+        public int GameID { get; set; }
+        public string Game_Name { get; set; }
+
+        public int Sales_Recent { get; set; }
+
+        public int Sales_Total { get; set; }
+
+        public DateTime Sales_UpdateDate { get; set; }
+
+
+        public virtual List<Games> games { get; set; }
+    }
+
+    public class Stock
+    {
+
+        [Key]
+        public int GameID { get; set; }
+        public string Game_Name { get; set; }
+        public int Stock_Quanity { get; set; }
+
+
+        public virtual List<Games> games { get; set; }
+    }
+
+    public class Orders
+    {
+
+        [Key]
+        public int Order_ID { get; set; }
+        public int GameID { get; set; }
+
+        public int Order_Amount { get; set; }
+
+        public int Order_TotalCost { get; set; }
+
+
+        public virtual List<Games> games { get; set; }
+    }
+
     public class GenreData: DbContext
     {
-        public GenreData() : base("GenreData") { }
+        public GenreData() : base("StoreData") { }
         public DbSet<Games> Games { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<Sales> Sales { get; set; }
+        public DbSet<Stock> Stock { get; set; }
+
+        public DbSet<Orders> Order { get; set; }
     }
 
     
