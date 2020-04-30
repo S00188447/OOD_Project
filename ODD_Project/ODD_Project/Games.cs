@@ -108,9 +108,9 @@ namespace ODD_Project
         public virtual List<Games> games { get; set; }
     }
 
-    public class GenreData: DbContext
+    public class GamesStoreData: DbContext
     {
-        public GenreData() : base("StoreData") { }
+        public GamesStoreData() : base("GamesStoreData") { }
         public DbSet<Games> Games { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Sales> Sales { get; set; }

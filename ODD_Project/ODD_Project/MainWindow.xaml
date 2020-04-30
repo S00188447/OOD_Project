@@ -20,11 +20,11 @@
                 <Grid>
                 <Label Content="Game Review" HorizontalAlignment="Left" Height="54" Margin="337,10,0,0" VerticalAlignment="Top" Width="166" FontSize="24"/>
                 <ListBox x:Name="lbxGames" HorizontalAlignment="Left" Height="195" Margin="10,82,0,0" VerticalAlignment="Top" Width="154"/>
-                <Button x:Name="btnViewReview" Content="View Review" HorizontalAlignment="Left" Height="24" Margin="374,203,0,0" VerticalAlignment="Top" Width="108" Click="BtnViewReview_Click"/>
-                <TextBlock x:Name="lableShowGameReview" HorizontalAlignment="Left" Height="215" Margin="550,123,0,0" TextWrapping="Wrap" Text="Shows review of selected game" VerticalAlignment="Top" Width="146"/>
+                <Button x:Name="btnViewReview" Content="View Review" HorizontalAlignment="Left" Height="24" Margin="363,82,0,0" VerticalAlignment="Top" Width="108" Click="BtnViewReview_Click"/>
+                <TextBlock x:Name="lableShowGameReview" HorizontalAlignment="Left" Height="215" Margin="632,12,0,0" TextWrapping="Wrap" Text="Shows review of selected game" VerticalAlignment="Top" Width="146"/>
                 <ComboBox x:Name="ComboBoxGenres" HorizontalAlignment="Left" Height="25" Margin="149,52,0,0" VerticalAlignment="Top" Width="119" SelectionChanged="ComboBoxGenres_SelectionChanged"/>
                     <Label Content="Genres" HorizontalAlignment="Left" Margin="72,50,0,0" VerticalAlignment="Top" FontSize="16" Height="27"/>
-                    <DataGrid x:Name="datagames" Width=" 600" Height="200" HorizontalAlignment="Center" Margin="188,77,0,115"/>
+                    <DataGrid x:Name="datagames" Width=" 600" Height="200" HorizontalAlignment="Center" Margin="104,182,84,10"/>
                 </Grid>
             </TabItem>
 

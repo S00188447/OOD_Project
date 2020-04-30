@@ -25,7 +25,7 @@ namespace ODD_Project
     public partial class MainWindow : Window
     {
 
-        GenreData db = new GenreData();
+        GamesStoreData db = new GamesStoreData();
 
         //Creating lists
         List<Games> games = new List<Games>();
@@ -127,25 +127,25 @@ namespace ODD_Project
             //var query = from g in db.Games
             //            where g.GenID == 4
             //            orderby g.Name
-            //            //select c;
+            //            select c;
 
-            //            select new
-            //            {
-            //                g.Name,
-            //                g.Review
-            //            };
+            //select new
+            //{
+            //    g.Name,
+            //    g.Review
+            //};
 
 
             //shows all games that cost 30 or under
-            //var query = from g in db.Games
-            //            orderby g.Cost
-            //            where g.Cost <= 30
-            //            select new
-            //            {
-            //                GameName = g.Name,
-            //                Cost = g.Cost,
+            var query = from g in db.Games
+                        orderby g.Cost
+                        where g.Cost <= 30
+                        select new
+                        {
+                            GameName = g.Name,
+                            Cost = g.Cost,
 
-            //            };
+                        };
 
             ////Sorting by cost high to low
             //var query = from g in db.Games
@@ -159,8 +159,8 @@ namespace ODD_Project
 
             ////returns the games with the gen id of 6
             //var query = (from detail in db.Games
-            //              where detail.GenID == 6
-            //              select detail);
+            //             where detail.GenID == 6
+            //             select detail);
 
 
 
@@ -170,7 +170,7 @@ namespace ODD_Project
 
 
 
-            //datagames.ItemsSource = query.ToList().Distinct();
+            datagames.ItemsSource = query.ToList().Distinct();
 
             //datagames.ItemsSource = query.ToList();
 
