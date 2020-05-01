@@ -113,6 +113,7 @@ namespace ODD_Project
             //games.Add(G13);
             //games.Add(G14);
 
+            //not working
             //var query = from g in db.Games
             //            group g by g.Genre into g
             //            orderby g.Count() descending
@@ -125,37 +126,37 @@ namespace ODD_Project
 
             ////shows all shooter games with their name and reivew
             //var query = from g in db.Games
-            //            where g.GenID == 4
+            //            where g.GenID == 3
             //            orderby g.Name
-            //            select c;
+            //            select new
+            //            {
+            //                Game = g.Name,
+            //                Review = g.Review
+            //            };
 
-            //select new
-            //{
-            //    g.Name,
-            //    g.Review
-            //};
+
 
 
             //shows all games that cost 30 or under
-            var query = from g in db.Games
-                        orderby g.Cost
-                        where g.Cost <= 30
-                        select new
-                        {
-                            GameName = g.Name,
-                            Cost = g.Cost,
-
-                        };
-
-            ////Sorting by cost high to low
             //var query = from g in db.Games
-            //            orderby g.Cost descending
+            //            orderby g.Cost
+            //            where g.Cost <= 30
             //            select new
             //            {
+            //                GameName = g.Name,
+            //                Cost = g.Cost,
 
-            //                g.Name,
-            //                g.Cost
             //            };
+
+            ////Sorting by cost high to low
+            var query = from g in db.Games
+                        orderby g.Cost descending
+                        select new
+                        {
+
+                            g.Name,
+                            g.Cost
+                        };
 
             ////returns the games with the gen id of 6
             //var query = (from detail in db.Games
@@ -170,7 +171,7 @@ namespace ODD_Project
 
 
 
-            datagames.ItemsSource = query.ToList().Distinct();
+            //datagames.ItemsSource = query.ToList().Distinct();
 
             //datagames.ItemsSource = query.ToList();
 
@@ -233,6 +234,204 @@ namespace ODD_Project
 
         private void cmbGenre_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void BuyHighToLowbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            var query = from g in db.Games
+                        orderby g.Cost descending
+                        select new
+                        {
+
+                            g.Name,
+                            g.Cost
+                        };
+
+            Buydg.ItemsSource = query.ToList();
+
+        }
+
+        private void BuyLowToHighbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            var query = from g in db.Games
+                        orderby g.Cost ascending
+                        select new
+                        {
+
+                            g.Name,
+                            g.Cost
+                        };
+
+            Buydg.ItemsSource = query.ToList();
+
+        }
+
+        private void Buybtn_Click(object sender, RoutedEventArgs e)
+        {
+            string PurchaseMessage = "The game you have selected has been ordered";
+            BuyPurchased.Text = PurchaseMessage;          
+        }
+
+        private void BuyShooterbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            //shows all shooter games with their name and reivew
+            var query = from g in db.Games
+                        where g.GenID == 1
+                        orderby g.Name
+                        select new
+                        {
+                            Game = g.Name,
+                            Cost = g.Cost                    
+              
+
+                        };
+
+            Buydg.ItemsSource = query.ToList();
+
+        }
+
+
+
+        private void BuySportsbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            //shows all shooter games with their name and reivew
+            var query = from g in db.Games
+                        where g.GenID == 2
+                        orderby g.Name
+                        select new
+                        {
+                            Game = g.Name,
+                            Cost = g.Cost
+                        
+                        };
+
+            Buydg.ItemsSource = query.ToList();
+
+        }
+
+        private void BuyRPGbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            //shows all shooter games with their name and reivew
+            var query = from g in db.Games
+                        where g.GenID == 3
+                        orderby g.Name
+                        select new
+                        {
+                            Game = g.Name,
+                            Cost = g.Cost
+                    
+                        };
+
+            Buydg.ItemsSource = query.ToList();
+
+        }
+
+
+
+
+
+        private void ReivewPoorbtm_Click(object sender, RoutedEventArgs e)
+        {
+            //shows all shooter games with their name and reivew
+            var query = from g in db.Games
+                        where g.Review == "6/10"
+                        orderby g.Name
+                        select new
+                        {
+                            Game = g.Name,
+                            Cost = g.Review
+
+                        };
+
+            Reviewdg.ItemsSource = query.ToList();
+
+
+        }
+
+        private void ReviewAveragebtn_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from g in db.Games
+                        where g.Review == "7/10"
+                        orderby g.Name
+                        select new
+                        {
+                            Game = g.Name,
+                            Cost = g.Review
+
+                        };
+
+            Reviewdg.ItemsSource = query.ToList();
+
+        }
+
+        private void ReviewGoodbtn_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from g in db.Games
+                        where g.Review == "8/10"
+                        orderby g.Name
+                        select new
+                        {
+                            Game = g.Name,
+                            Cost = g.Review
+
+                        };
+
+            Reviewdg.ItemsSource = query.ToList();
+
+        }
+
+
+
+        private void ReviewGreatbtn_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from g in db.Games
+                        where g.Review == "9/10"
+                        orderby g.Name
+                        select new
+                        {
+                            Game = g.Name,
+                            Cost = g.Review
+
+                        };
+
+            Reviewdg.ItemsSource = query.ToList();
+
+        }
+
+        private void ReviewAmazingbtn_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from g in db.Games
+                        where g.Review == "10/10"
+                        orderby g.Name
+                        select new
+                        {
+                            Game = g.Name,
+                            Cost = g.Review
+
+                        };
+
+            Reviewdg.ItemsSource = query.ToList();
+
+        }
+
+        private void ReviewAllbtn_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from g in db.Games               
+                        orderby g.Review descending
+                        select new
+                        {
+                            Game = g.Name,
+                            Cost = g.Review
+
+                        };
+
+            Reviewdg.ItemsSource = query.ToList();
 
         }
 

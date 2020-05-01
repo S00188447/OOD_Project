@@ -14,53 +14,75 @@
         <TabControl TabStripPlacement="Top">
 
 
-            
-            
+
+
             <TabItem Header="Game Reviews" Width="75">
                 <Grid>
-                <Label Content="Game Review" HorizontalAlignment="Left" Height="54" Margin="337,10,0,0" VerticalAlignment="Top" Width="166" FontSize="24"/>
-                <ListBox x:Name="lbxGames" HorizontalAlignment="Left" Height="195" Margin="10,82,0,0" VerticalAlignment="Top" Width="154"/>
-                <Button x:Name="btnViewReview" Content="View Review" HorizontalAlignment="Left" Height="24" Margin="363,82,0,0" VerticalAlignment="Top" Width="108" Click="BtnViewReview_Click"/>
-                <TextBlock x:Name="lableShowGameReview" HorizontalAlignment="Left" Height="215" Margin="632,12,0,0" TextWrapping="Wrap" Text="Shows review of selected game" VerticalAlignment="Top" Width="146"/>
-                <ComboBox x:Name="ComboBoxGenres" HorizontalAlignment="Left" Height="25" Margin="149,52,0,0" VerticalAlignment="Top" Width="119" SelectionChanged="ComboBoxGenres_SelectionChanged"/>
-                    <Label Content="Genres" HorizontalAlignment="Left" Margin="72,50,0,0" VerticalAlignment="Top" FontSize="16" Height="27"/>
-                    <DataGrid x:Name="datagames" Width=" 600" Height="200" HorizontalAlignment="Center" Margin="104,182,84,10"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="167*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Game Review" HorizontalAlignment="Left" Height="54" Margin="216.59,10,0,0" VerticalAlignment="Top" Width="166" FontSize="24" Grid.Column="1"/>
+                    <ListBox x:Name="lbxGames" HorizontalAlignment="Left" Height="195" Margin="10,82,0,0" VerticalAlignment="Top" Width="154" Grid.ColumnSpan="2"/>
+                    <Button x:Name="ReivewPoorbtm" Content="Poor" HorizontalAlignment="Left" Height="24" Margin="9,31,0,0" VerticalAlignment="Top" Width="108" Click="ReivewPoorbtm_Click" Grid.Column="1"/>
+                    <Button x:Name="ReviewAveragebtn" Content="Average" HorizontalAlignment="Left" Height="24" Margin="135,33,0,0" VerticalAlignment="Top" Width="108" Click="ReviewAveragebtn_Click" Grid.Column="1"/>
+                    <Button x:Name="ReviewGoodbtn" Content="Good" HorizontalAlignment="Left" Height="24" Margin="260,33,0,0" VerticalAlignment="Top" Width="108" Click="ReviewGoodbtn_Click" Grid.Column="1"/>
+                    <Button x:Name="ReviewGreatbtn" Content="Great" HorizontalAlignment="Left" Height="24" Margin="383,33,0,0" VerticalAlignment="Top" Width="108" Click="ReviewGreatbtn_Click" Grid.Column="1"/>
+                    <Button x:Name="ReviewAmazingbtn" Content="Amazing" HorizontalAlignment="Left" Height="24" Margin="508,33,0,0" VerticalAlignment="Top" Width="108" Click="ReviewAmazingbtn_Click" Grid.Column="1"/>
+                    <Button x:Name="ReviewAllbtn" Content="All" HorizontalAlignment="Left" Height="24" Margin="340,95,0,0" VerticalAlignment="Top" Width="108" Click="ReviewAllbtn_Click" Grid.Column="1"/>
+                    <TextBlock x:Name="lableShowGameReview" HorizontalAlignment="Left" Height="215" Margin="531,106,-9,0" TextWrapping="Wrap" Text="Shows review of selected game" VerticalAlignment="Top" Width="146" Grid.Column="1"/>
+                    <ComboBox x:Name="ComboBoxGenres" HorizontalAlignment="Left" Height="25" Margin="28.59,52,0,0" VerticalAlignment="Top" Width="119" SelectionChanged="ComboBoxGenres_SelectionChanged" Grid.Column="1"/>
+                    <Label Content="Genres" HorizontalAlignment="Left" Margin="72,50,0,0" VerticalAlignment="Top" FontSize="16" Height="27" Grid.ColumnSpan="2"/>
+                    <DataGrid x:Name="Reviewdg" Width=" 600" Height="200" HorizontalAlignment="Center" Margin="104,182,84,10" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="ReviewSort" HorizontalAlignment="Left" Height="24" Margin="228,95,0,0" TextWrapping="Wrap" Text="-Sort-" VerticalAlignment="Top" Width="53" Grid.Column="1" FontSize="18" RenderTransformOrigin="1.789,0.367"/>
                 </Grid>
             </TabItem>
 
-            
-            
-            
+
+
+
             <TabItem Header="Buy" Width="75">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2"/>
-                        <RowDefinition Height="8"/>
-                    </Grid.RowDefinitions>
-                    <ComboBox Name="cmbGenre" Width="200" Height="30" SelectionChanged="cmbGenre_SelectionChanged"
-                              VerticalAlignment="Top" DisplayMemberPath="Name" SelectedValuePath="id"      >
-                        
-                    </ComboBox>                 
-     
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="19*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="96*"/>
+                        <ColumnDefinition Width="668*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="BuyLowToHighbtn" Content="Low to High" HorizontalAlignment="Left" Height="24" Margin="163,15,0,0" VerticalAlignment="Top" Width="114" Click="BuyLowToHighbtn_Click" Grid.Column="3"/>
+                    <Button x:Name="BuyHighToLowbtn" Content="High to Low" HorizontalAlignment="Left" Height="24" Margin="163,49,0,0" VerticalAlignment="Top" Width="114" Click="BuyHighToLowbtn_Click" Grid.Column="3"/>
+                    <Button x:Name="BuyShooterbtn" Content="Shooter" HorizontalAlignment="Left" Height="24" Margin="351,15,0,0" VerticalAlignment="Top" Width="92" Click="BuyShooterbtn_Click" Grid.Column="3"/>
+                    <Button x:Name="BuyRPGbtn" Content="RPG" HorizontalAlignment="Left" Height="24" Margin="351,45,0,0" VerticalAlignment="Top" Width="92" Click="BuyRPGbtn_Click" Grid.Column="3"/>
+                    <Button x:Name="BuySportsbtn" Content="Sports" HorizontalAlignment="Left" Height="24" Margin="351,74,0,0" VerticalAlignment="Top" Width="92" Click="BuySportsbtn_Click" Grid.Column="3"/>
+                    <Button x:Name="Buybtn" Content="Purchase" HorizontalAlignment="Left" Height="24" Margin="231,312,0,0" VerticalAlignment="Top" Width="96" Click="Buybtn_Click" Grid.Column="3"/>
+                    <TextBlock x:Name="BuySort" HorizontalAlignment="Left" Height="24" Margin="293,49,0,0" TextWrapping="Wrap" Text="-Sort-" VerticalAlignment="Top" Width="53" Grid.Column="3" FontSize="18" RenderTransformOrigin="1.789,0.367"/>
+                    <TextBlock x:Name="BuyPurchased" HorizontalAlignment="Left" Height="38" Margin="217,344,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142" Grid.Column="3" FontSize="12" RenderTransformOrigin="1.789,0.367"/>
+                    <DataGrid x:Name="Buydg" Width=" 600" Height="200" HorizontalAlignment="Center" Margin="75,107,89,85" Grid.ColumnSpan="2" Grid.Column="2"/>
                 </Grid>
             </TabItem>
 
-            
-            
-            
+
+
+
             <TabItem Header="Sell" Width="75">
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2"/>
-                        <RowDefinition Height="8"/>
-                    </Grid.RowDefinitions>
-
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="167*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="SellLable" HorizontalAlignment="Left" Height="54" Margin="216.59,10,0,0" VerticalAlignment="Top" Width="166" FontSize="24" Grid.Column="1"/>
+                    <ListBox x:Name="SellLbx" HorizontalAlignment="Left" Height="195" Margin="10,82,0,0" VerticalAlignment="Top" Width="154" Grid.ColumnSpan="2"/>
+                    <Button x:Name="Sellbtn" Content="View Review" HorizontalAlignment="Left" Height="24" Margin="242.59,82,0,0" VerticalAlignment="Top" Width="108" Click="BtnViewReview_Click" Grid.Column="1"/>
+                    <TextBlock x:Name="SellTblk" HorizontalAlignment="Left" Height="215" Margin="511.59,12,0,0" TextWrapping="Wrap" Text="Shows review of selected game" VerticalAlignment="Top" Width="146" Grid.Column="1"/>
+                    <ComboBox x:Name="SellCombo" HorizontalAlignment="Left" Height="25" Margin="28.59,52,0,0" VerticalAlignment="Top" Width="119" SelectionChanged="ComboBoxGenres_SelectionChanged" Grid.Column="1"/>
+                    <Label Content="SellLabel2" HorizontalAlignment="Left" Margin="72,50,0,0" VerticalAlignment="Top" FontSize="16" Height="27" Grid.ColumnSpan="2"/>
+                    <DataGrid x:Name="Saledg" Width=" 600" Height="200" HorizontalAlignment="Center" Margin="104,182,84,10" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
 
 
-            
-            
+
+
         </TabControl>
     </Grid>
 </Window>
