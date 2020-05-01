@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 
 namespace ODD_Project
 {
+    //Github link:
+    // https://github.com/S00188447/OOD_Project
 
     public partial class MainWindow : Window
     {
