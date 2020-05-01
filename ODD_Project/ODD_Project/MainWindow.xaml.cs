@@ -184,7 +184,7 @@ namespace ODD_Project
                         select new
                         {
                             Game = g.Name,
-                            Cost = g.Review
+                            Review = g.Review
 
                         };
 
@@ -202,7 +202,7 @@ namespace ODD_Project
                         select new
                         {
                             Game = g.Name,
-                            Cost = g.Review
+                            Review = g.Review
 
                         };
 
@@ -219,7 +219,7 @@ namespace ODD_Project
                         select new
                         {
                             Game = g.Name,
-                            Cost = g.Review
+                            Review = g.Review
 
                         };
 
@@ -238,7 +238,7 @@ namespace ODD_Project
                         select new
                         {
                             Game = g.Name,
-                            Cost = g.Review
+                            Review = g.Review
 
                         };
 
@@ -255,7 +255,7 @@ namespace ODD_Project
                         select new
                         {
                             Game = g.Name,
-                            Cost = g.Review
+                            Review = g.Review
 
                         };
 
@@ -271,7 +271,7 @@ namespace ODD_Project
                         select new
                         {
                             Game = g.Name,
-                            Cost = g.Review
+                            Review = g.Review
 
                         };
 
